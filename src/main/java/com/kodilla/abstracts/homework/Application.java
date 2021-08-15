@@ -1,24 +1,31 @@
 package com.kodilla.abstracts.homework;
 
 public class Application {
+
     public static void main(String[] args) {
 
 
-        Square square = new Square();
+            Square square = new Square(1);
 
-        System.out.println("obwod kwadratu wynosi:" + square.perimeter(2,0,0));
-        System.out.println("pole kwadratu wynosi:" + square.area(2,0, 0));
+            System.out.println("Obwod kwadratu wynosi:" + square.perimeter());
+            System.out.println("Pole kwadratu wynosi:" + square.area());
 
 
-        Rectangle rectangle = new Rectangle();
+            Rectangle rectangle = new Rectangle(1,2);
 
-        System.out.println("obwod prostokata wynosi:" + rectangle.perimeter(50,50,0) );
-        System.out.println("pole prostokata wynosi:" + rectangle.area(50,50,0));
+            System.out.println("\n" +"Obwod prostokata wynosi:" + rectangle.perimeter() );
+            System.out.println("Pole prostokata wynosi:" + rectangle.area());
 
-        Parallelogram parallelogram = new Parallelogram();
+            Parallelogram parallelogram = new Parallelogram(1,2,3);
 
-        System.out.println("obwod równoległoboku wynosi:" + parallelogram.perimeter(10,10,10));
-        System.out.println("pole równoległoboku wynosi:" + parallelogram.area(10,10,10));
+            System.out.println("\n" + "Obwod równoległoboku wynosi:" + parallelogram.perimeter());
+            System.out.println("Pole równoległoboku wynosi:" + parallelogram.area());
 
-}
-}
+            Circle circle = new Circle(3.54);
+
+            System.out.println("\n" + "Obwod koła wynosi:" + circle.perimeter());
+            System.out.println("Pole koła wynosi:" + circle.area());
+
+        }
+    }
+
