@@ -11,7 +11,7 @@ public class CalculatorTestSuite { /**/
     public void testSum() {
         Calculator calculator = new Calculator();
         double sumResult = calculator.adingNumber(5, 8);
-        assertEquals(13, sumResult);
+        assertEquals(13, sumResult,0.1);
 
     }
 
@@ -20,15 +20,15 @@ public class CalculatorTestSuite { /**/
         Calculator calculator = new Calculator();
 
         double substractResult = calculator.substractNumber(2, 0.88);
-        assertEquals(1.12,substractResult);
+        assertEquals(1.12,substractResult,0.1);
     }
 
     @Test
     public void testPower(){
         Calculator calculator = new Calculator();
 
-        double powerResult = calculator.power(2,2);
-        assertEquals(4,powerResult);
+        double powerResult = calculator.power(2.1,2);
+        assertEquals(4.43,powerResult,0.01);
     }
 
 
