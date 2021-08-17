@@ -7,7 +7,7 @@ public class Calculator {
     double adingNumber(double numberA, double numberB)
     {
         return  numberA + numberB;
-    }
+    } /**/
 
     double substractNumber(double numberA, double numberB)
     {

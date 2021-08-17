@@ -2,7 +2,7 @@ package com.kodilla.basic_assertion;
 public class Application {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        double numberA = 5;
+        double numberA = 5; //**/
         double numberB = 8;
         double numberC = 9;
         double numberD = 2;
