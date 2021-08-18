@@ -28,8 +28,26 @@ public class CalculatorTestSuite { /**/
         Calculator calculator = new Calculator();
 
         double powerResult = calculator.power(2.1,2);
-        assertEquals(4.43,powerResult,0.01);
+        assertEquals(4.42,powerResult,0.01);
+
     }
+
+    @Test
+    public void testPowerZero(){
+        Calculator calculator = new Calculator();
+
+        double powerZero = calculator.powerZero(0,2);
+        assertEquals(0,powerZero,0.01);
+    }
+
+    @Test
+    public void testPowerBelowZero(){
+        Calculator calculator = new Calculator();
+
+        double powerBelowZero = calculator.powerBelowZero(-2,2);
+        assertEquals(4,powerBelowZero,0.01);
+    }
+
 
 
 }

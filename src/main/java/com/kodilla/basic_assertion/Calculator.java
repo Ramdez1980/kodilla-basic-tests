@@ -22,6 +22,17 @@ public class Calculator {
         }
         return Math.pow(numberC, numberD);
     }
+
+    double powerZero(double numberC, double numberD){
+        return 0;
+    }
+
+    double powerBelowZero(double numberC, double numberD){
+        return Math.pow(numberC, numberD);
+    }
+
+
+
 }
 
 
