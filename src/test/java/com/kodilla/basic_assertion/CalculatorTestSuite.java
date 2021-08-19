@@ -24,7 +24,7 @@ public class CalculatorTestSuite { /**/
     }
 
     @Test
-    public void testPower(){
+    public void testForPositiveBaseAndPositivePower(){
         Calculator calculator = new Calculator();
 
         double powerResult = calculator.power(2.1,2);
@@ -33,20 +33,92 @@ public class CalculatorTestSuite { /**/
     }
 
     @Test
-    public void testPowerZero(){
+    public void testForZeroBaseAndPositivePower(){
         Calculator calculator = new Calculator();
 
-        double powerZero = calculator.powerZero(0,2);
-        assertEquals(0,powerZero,0.01);
+        double powerResult = calculator.power(0,2);
+        assertEquals(0, powerResult,0.01);
     }
 
     @Test
-    public void testPowerBelowZero(){
+    public void testForNegativeBaseAndPositivePower(){
         Calculator calculator = new Calculator();
 
-        double powerBelowZero = calculator.powerBelowZero(-2,2);
-        assertEquals(4,powerBelowZero,0.01);
+        double powerResult = calculator.power(-2,2);
+        assertEquals(4, powerResult,0.01);
     }
+
+    @Test
+    public void testForPositiveBaseAndNegativePower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(2,-1);
+        assertEquals(0.5, powerResult,0.01);
+    }
+
+    @Test
+    public void testForPositiveBaseAndZeroPower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(2,0);
+        assertEquals(1, powerResult,0.01);
+    }
+
+    @Test
+    public void testForZeroBaseAndZeroPower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(0,0);
+        assertEquals(1, powerResult,0.01);
+    }
+
+    @Test
+    public void testForNegativeBaseAndNegativePower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(-2,-1);
+        assertEquals(-0.5, powerResult,0.01);
+    }
+
+    @Test
+    public void testForNegativeBaseAndNegativePowerMinusTwo(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(-2,-2);
+        assertEquals(0.25, powerResult,0.01);
+    }
+
+
+    @Test
+    public void testForNegativeBaseAndZeroPower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(-2,0);
+        assertEquals(1, powerResult,0.01);
+    }
+
+    @Test
+    public void testForNegativeBaseAndPositivePowerMinusThird(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(-2,3);
+        assertEquals(-8, powerResult,0.01);
+    }
+
+    @Test
+    public void testFoZeroBaseAndNegativePower(){
+        Calculator calculator = new Calculator();
+
+        double powerResult = calculator.power(0,-1);
+        assertEquals(0, powerResult,0.01);
+    }
+
+
+
+
+
+
+
 
 
 

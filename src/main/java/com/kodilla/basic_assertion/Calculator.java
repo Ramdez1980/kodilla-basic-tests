@@ -15,12 +15,10 @@ public class Calculator {
 
     double power(double numberC, double numberD)                              //zadanie domowe 3.5.2//
     {
-        if (numberC == 0) {
-          return 0;                               //zadanie domowe 3.5.2//
-        } else if (numberC <0) {
-            return Math.pow(numberC, numberD);
-        }
+        if (numberC == 0 && numberD < 0)
+        { return 0; }
         return Math.pow(numberC, numberD);
+
     }
 
     double powerZero(double numberC, double numberD){
