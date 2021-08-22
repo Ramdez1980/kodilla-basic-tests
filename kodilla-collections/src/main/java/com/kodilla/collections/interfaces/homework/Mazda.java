@@ -2,18 +2,13 @@ package com.kodilla.collections.interfaces.homework;
 
 import java.util.Random;
 
-public class Mazda implements Car {
+public class Mazda implements Car{
+
     private double currentSpeed;
-    /*private double highSpeed;*/
 
-
-
-    public Mazda(double currentSpeed/*, double highSpeed*/) {
+    public Mazda(double currentSpeed) {
         this.currentSpeed = currentSpeed;
-        /*this.highSpeed = highSpeed;*/
-
     }
-
 
     @Override
     public String getName() {
@@ -24,6 +19,7 @@ public class Mazda implements Car {
     public double getSpeed() {
         return currentSpeed;
     }
+
     @Override
     public double increaseSpeed() {
         {return currentSpeed * 1.3; }
@@ -31,6 +27,7 @@ public class Mazda implements Car {
 
     @Override
     public double decreaseSpeed() {
-        return  currentSpeed / 2 ;
+
+        return currentSpeed / 1.2;
     }
 }

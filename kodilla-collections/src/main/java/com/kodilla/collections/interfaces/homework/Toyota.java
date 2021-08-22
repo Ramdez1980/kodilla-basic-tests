@@ -10,6 +10,7 @@ public class Toyota implements Car {
         this.currentSpeed = currentSpeed;
     }
 
+
     @Override
     public String getName() {
         return "Toyota";

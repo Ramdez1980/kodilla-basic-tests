@@ -3,12 +3,12 @@ package com.kodilla.collections.interfaces.homework;
 public interface Car {
 
 
-        String getName();
+    String getName();
 
-        double getSpeed();
+    double getSpeed();
 
-        double  increaseSpeed();
+    double  increaseSpeed();
 
-        double decreaseSpeed();
+    double decreaseSpeed();
 
-    }
+}
