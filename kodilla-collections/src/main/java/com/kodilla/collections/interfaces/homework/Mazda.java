@@ -26,8 +26,7 @@ public class Mazda implements Car {
     }
     @Override
     public double increaseSpeed() {
-       Random random = new Random();
-        return currentSpeed + random.nextDouble() * 100 + 1/*currentSpeed * 1.3*/ ;
+        {return currentSpeed * 1.3; }
     }
 
     @Override

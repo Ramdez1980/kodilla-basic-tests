@@ -22,9 +22,7 @@
 
         @Override
         public double increaseSpeed() {
-
-            Random random = new Random();
-            return currentSpeed + random.nextDouble() * 100 + 1;
+            {return currentSpeed * 1.5; }
         }
 
         @Override
