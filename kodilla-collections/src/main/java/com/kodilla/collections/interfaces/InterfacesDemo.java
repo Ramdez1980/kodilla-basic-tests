@@ -1,6 +1,6 @@
 package com.kodilla.collections.interfaces;
 
-import com.kodilla.collections.interfaces.homework.Shape;
+import com.kodilla.collections.interfaces.Shape;
 
 public class InterfacesDemo {
 

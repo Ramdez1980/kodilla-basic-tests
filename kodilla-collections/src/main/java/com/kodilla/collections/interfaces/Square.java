@@ -1,6 +1,8 @@
 package com.kodilla.collections.interfaces;
 
-import com.kodilla.collections.interfaces.homework.Shape;
+import com.kodilla.collections.interfaces.Shape;
+
+import java.util.Objects;
 
 public class Square implements Shape {
 
@@ -17,4 +19,6 @@ public class Square implements Shape {
     public double getPerimeter() {
         return 4 * width;
     }
+
+
 }
