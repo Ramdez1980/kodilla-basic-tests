@@ -6,10 +6,10 @@ import java.util.Objects;
 public class Stamp {
     private String stampName;
     private String stampMeasurements;
-    private String stamped;
+    private boolean stamped;
 
 
-    public Stamp(String stampName, String stampMeasurements, String stamped) {
+    public Stamp(String stampName, String stampMeasurements, boolean stamped) {
         this.stampName = stampName;
         this.stampMeasurements = stampMeasurements;
         this.stamped = stamped;
@@ -24,7 +24,7 @@ public class Stamp {
             return stampMeasurements;
         }
 
-        public String getStamped () {
+        public boolean getStamped () {
             return stamped;
         }
 
@@ -35,9 +35,9 @@ public class Stamp {
             if (o == null || getClass() != o.getClass())
                 return false;
             Stamp stamp = (Stamp) o;
-            return this.stampName.equals(stamp.stampName)
+            return Boolean.compare(stamp.stamped, stamped) == 0
                     && this.stampMeasurements.equals(stamp.stampMeasurements)
-                    && this.stamped.equals(stamp.stamped);
+                    && this.stampName.equals(stamp.stampName);
         }
 
         @Override public int hashCode() {
