@@ -11,8 +11,7 @@ public class CarUtils {
     public static void describeCar(Car car) {
         System.out.println("-----------------------------");
         System.out.println("Car make " + car.getName());
-        car.increaseSpeed();
-        System.out.println("speed after increase :" + car.getSpeed());
+        System.out.println("Current speed :" + car.getSpeed());
 
     }
 
