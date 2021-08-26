@@ -22,36 +22,14 @@
         }
 
         @Override
-        public double increaseSpeed() {
-            {return currentSpeed * 1.5; }
+        public void increaseSpeed() {
+            currentSpeed = currentSpeed  + 10;
         }
 
         @Override
-        public double decreaseSpeed() {
-
-            return currentSpeed / 1.8;
+        public void decreaseSpeed() {
+            currentSpeed = currentSpeed - 10;
         }
 
-        //4.3//
 
-
-        @Override
-        public String toString() {
-            return "Opel{" +
-                    "currentSpeed=" + currentSpeed +
-                    '}';
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Opel opel = (Opel) o;
-            return Double.compare(opel.currentSpeed, currentSpeed) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(currentSpeed);
-        }
     }

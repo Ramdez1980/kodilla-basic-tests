@@ -7,8 +7,8 @@ public interface Car {
 
     double getSpeed();
 
-    double  increaseSpeed();
+    void  increaseSpeed();
 
-    double decreaseSpeed();
+    void decreaseSpeed();
 
 }
