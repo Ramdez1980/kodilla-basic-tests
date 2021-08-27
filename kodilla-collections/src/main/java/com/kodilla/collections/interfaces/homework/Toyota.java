@@ -23,37 +23,14 @@ public class Toyota implements Car {
     }
 
     @Override
-    public double increaseSpeed() {
-
-        {return currentSpeed * 1.1; }
+    public void increaseSpeed() {
+        currentSpeed = currentSpeed  + 15;
     }
 
     @Override
-    public double decreaseSpeed() {
-
-        return currentSpeed / 1.5;
+    public void decreaseSpeed() {
+        currentSpeed = currentSpeed - 10;
     }
 
-    //4.3//
 
-
-    @Override
-    public String toString() {
-        return "Toyota{" +
-                "currentSpeed=" + currentSpeed +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Toyota toyota = (Toyota) o;
-        return Double.compare(toyota.currentSpeed, currentSpeed) == 0;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(currentSpeed);
-    }
 }

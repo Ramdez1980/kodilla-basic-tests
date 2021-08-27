@@ -15,10 +15,13 @@ public class CarRace {
 
 
     private static void doRace(Car car) {
-        System.out.println("------------------------------------");
-        System.out.println("Name of Car: " + car.getName());
-        System.out.println("Current speed: "  + car.getSpeed() + " km/h");
-        System.out.println("Increase speed to: " + car.increaseSpeed() + " km/h");
-        System.out.println("Decrease speed to: " + car.decreaseSpeed() + " km/h");
+        car.increaseSpeed();
+        car.increaseSpeed();
+        car.increaseSpeed();
+        car.decreaseSpeed();
+        car.decreaseSpeed();
+
+        System.out.println("Current speed: "  + car.getSpeed()  + " km/h");
+
     }
 }
