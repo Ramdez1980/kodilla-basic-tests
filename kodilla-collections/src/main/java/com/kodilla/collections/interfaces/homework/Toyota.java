@@ -33,4 +33,24 @@ public class Toyota implements Car {
     }
 
 
+    @Override
+    public String toString() {
+        return "Toyota{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Toyota toyota = (Toyota) o;
+        return Double.compare(toyota.currentSpeed, currentSpeed) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(currentSpeed);
+    }
+
 }

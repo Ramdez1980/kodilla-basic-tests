@@ -3,7 +3,7 @@
     import java.util.Objects;
     import java.util.Random;
 
-    public class Opel implements Car{
+    public class Opel  implements Car{
 
         private double currentSpeed;
 
@@ -31,5 +31,24 @@
             currentSpeed = currentSpeed - 10;
         }
 
+        @Override
+        public String toString() {
+            return "Opel{" +
+                    "currentSpeed=" + currentSpeed +
+                    '}';
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Opel opel = (Opel) o;
+            return Double.compare(opel.currentSpeed, currentSpeed) == 0;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(currentSpeed);
+        }
 
     }
