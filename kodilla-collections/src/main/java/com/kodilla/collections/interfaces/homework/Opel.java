@@ -38,17 +38,4 @@
                     '}';
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Opel opel = (Opel) o;
-            return Double.compare(opel.currentSpeed, currentSpeed) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(currentSpeed);
-        }
-
     }

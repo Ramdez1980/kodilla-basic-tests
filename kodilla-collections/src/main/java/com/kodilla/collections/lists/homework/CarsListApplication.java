@@ -19,8 +19,9 @@ public class CarsListApplication {
 
 
         for (Car car : cars) {
-            if (car.getSpeed() > 0)
-                System.out.println(car + ", current speed: " + car.getSpeed());
+            System.out.println("-----------------------------");
+            System.out.println("Car make " + car.getName());
+            System.out.println("Current speed :" + car.getSpeed());
         }
 
     }
