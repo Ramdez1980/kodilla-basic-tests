@@ -3,7 +3,7 @@
     import java.util.Objects;
     import java.util.Random;
 
-    public class Opel  implements Car{
+    public class Opel implements Car{
 
         private double currentSpeed;
 
