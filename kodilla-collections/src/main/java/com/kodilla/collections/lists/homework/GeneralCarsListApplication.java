@@ -1,5 +1,6 @@
 package com.kodilla.collections.lists.homework;
 
+import com.kodilla.collections.arrays.homework.CarUtils;
 import com.kodilla.collections.interfaces.homework.Car;
 import com.kodilla.collections.interfaces.homework.Mazda;
 import com.kodilla.collections.interfaces.homework.Opel;
@@ -24,8 +25,7 @@ public class GeneralCarsListApplication {
 
 
         for (Car car : cars) {
-            System.out.println(car + ", name: " + car.getName() +
-                    ", speed: " + car.getSpeed());
+            CarUtils.describeCar(car);
 
         }
     }
