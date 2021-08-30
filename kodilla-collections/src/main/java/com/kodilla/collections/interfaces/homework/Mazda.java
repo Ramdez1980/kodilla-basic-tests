@@ -31,4 +31,11 @@ public class Mazda implements Car {
         currentSpeed = currentSpeed - 20;
     }
 
+    @Override
+    public String toString() {
+        return "Mazda{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
+    }
+
 }

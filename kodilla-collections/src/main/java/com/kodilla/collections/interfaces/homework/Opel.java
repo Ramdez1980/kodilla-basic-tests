@@ -31,5 +31,11 @@
             currentSpeed = currentSpeed - 10;
         }
 
+        @Override
+        public String toString() {
+            return "Opel{" +
+                    "currentSpeed=" + currentSpeed +
+                    '}';
+        }
 
     }

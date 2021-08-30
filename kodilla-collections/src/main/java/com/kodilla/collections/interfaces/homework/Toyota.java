@@ -33,4 +33,11 @@ public class Toyota implements Car {
     }
 
 
+    @Override
+    public String toString() {
+        return "Toyota{" +
+                "currentSpeed=" + currentSpeed +
+                '}';
+    }
+
 }
