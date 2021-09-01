@@ -1,7 +1,5 @@
 package adv.maps.homework;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,16 +7,13 @@ public class School {
 
     private String schoolName;
     private String schoolAdress;
-    private List<Integer> school = new ArrayList<>();
+    private List<Integer> studentsCount;
 
-
-
-    public School(String schoolName, String schoolAdress,int... school) {
-         for (int schools : school)
-         this.school.add(schools);
+    public School(String schoolName, String schoolAdress, List<Integer> studentsCount) {
         this.schoolName = schoolName;
         this.schoolAdress = schoolAdress;
-           }
+        this.studentsCount = studentsCount;
+    }
 
     public String getSchoolName() {
         return schoolName;
@@ -28,11 +23,15 @@ public class School {
         return schoolAdress;
     }
 
-    public int getsum() {    // [1]
-        int sum = 0;            // [2]
-        for (int schools : school)  // [3]
-            sum += schools;             // [4]
-        return sum ;  // [5]
+    public int getTotalStudentsCount() {
+        int sum = 0;
+        for (int schools : studentsCount)
+            sum += schools;
+        return sum ;
+    }
+
+    public String getDescription() {
+        return schoolName + " : " + getTotalStudentsCount();
     }
 
     @Override
@@ -40,12 +39,12 @@ public class School {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         School school1 = (School) o;
-        return schoolName.equals(school1.schoolName) && schoolAdress.equals(school1.schoolAdress) && school.equals(school1.school);
+        return schoolName.equals(school1.schoolName) && schoolAdress.equals(school1.schoolAdress) && studentsCount.equals(school1.studentsCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(schoolName, schoolAdress, school);
+        return Objects.hash(schoolName, schoolAdress, studentsCount);
     }
 
     @Override
@@ -53,7 +52,7 @@ public class School {
         return "School{" +
                 "schoolName='" + schoolName + '\'' +
                 ", schoolAdress='" + schoolAdress + '\'' +
-                ", school=" + school +
+                ", school=" + studentsCount +
                 '}';
     }
 }
