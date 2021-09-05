@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 public class Task {
-    private String name;
+    public String name;
     LocalDate opened;
     LocalDate deadline;
 
