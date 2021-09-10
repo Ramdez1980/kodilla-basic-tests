@@ -6,20 +6,20 @@ public class ForumStats {
         double avgAboveFourty = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() > 40)
-                .map(postQuantity -> postQuantity.getNumberOfPost())
+                .map(postCount -> postCount.getNumberOfPost())
                 .mapToInt(n -> n)
                 .average()
-                .getAsDouble();
+                .orElse(0);
         System.out.println(avgAboveFourty);
 
 
         double avgBelowFourty = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() < 40)
-                .map(postQuantity -> postQuantity.getNumberOfPost())
+                .map(postCount -> postCount.getNumberOfPost())
                 .mapToInt(n -> n)
                 .average()
-                .getAsDouble();
+                .orElse(0);
         System.out.println(avgBelowFourty);
     }
 
