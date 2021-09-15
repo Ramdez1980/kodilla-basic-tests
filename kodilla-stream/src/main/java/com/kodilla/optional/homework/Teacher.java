@@ -2,7 +2,7 @@ package com.kodilla.optional.homework;
 
 public class Teacher {
 
-    String teacherName;
+    private String teacherName;
 
     public Teacher(String name) {
         this.teacherName = name;

@@ -1,8 +1,7 @@
 package com.kodilla.optional;
 
-import com.kodilla.stream.User;
-
 import java.util.Optional;
+import com.kodilla.stream.User;
 
 public class OptionalExample {
     public static void main(String[] args) {

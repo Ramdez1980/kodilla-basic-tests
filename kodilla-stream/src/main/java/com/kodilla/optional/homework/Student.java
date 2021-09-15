@@ -1,13 +1,11 @@
 package com.kodilla.optional.homework;
 
-import java.util.List;
-
 public class Student {
 
     private String studentName;
-    private List<String> teacher;
+    private Teacher teacher;
 
-    public Student(String studentName, List<String> teacher) {
+    public Student(String studentName, Teacher teacher) {
         this.studentName = studentName;
         this.teacher = teacher;
     }
@@ -16,16 +14,8 @@ public class Student {
         return studentName;
     }
 
-    public List<String> getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "studentName='" + studentName + '\'' +
-                ", teacher=" + teacher +
-                '}';
     }
 }
 
