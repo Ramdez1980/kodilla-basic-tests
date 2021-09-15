@@ -5,9 +5,6 @@ import java.util.*;
 
 public class FlightFinder {
 
-    Map< String, List<Flight>> flightFinder = new HashMap<>();
-
-
     public List <Flight> findFlightsFrom(String departure){
         List <Flight>  flights = new ArrayList<>();
         for (Flight flight : FlightRepository.getFlightsTable()) {
