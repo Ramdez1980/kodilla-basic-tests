@@ -8,10 +8,10 @@ public class FlightFinder {
     Map< String, List<Flight>> flightFinder = new HashMap<>();
 
 
-    public List <Flight> findFlightsFrom(String arrival){
+    public List <Flight> findFlightsFrom(String departure){
         List <Flight>  flights = new ArrayList<>();
         for (Flight flight : FlightRepository.getFlightsTable()) {
-            if (flight.getDeparture().equals(arrival)) {
+            if (flight.getDeparture().equals(departure)) {
                 flights.add(flight);
             }
         }
@@ -19,10 +19,10 @@ public class FlightFinder {
     }
 
 
-    public List<Flight> findFlightsTo (String departure){
+    public List<Flight> findFlightsTo (String arrival){
         List <Flight> flights = new ArrayList<>();
         for (Flight flight : FlightRepository.getFlightsTable()) {
-            if (flight.getDeparture().equals(departure)) {
+            if (flight.getArrival().equals(arrival)) {
                 flights.add(flight);
             }
         }
