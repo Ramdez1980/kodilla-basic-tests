@@ -19,7 +19,6 @@ class FlightFinderTestSuite {
         List<Flight> expected = Arrays.asList(new Flight("BERLIN", "WARSAW"));
         // when
         List<Flight> result = flightFinder.findFlightsFrom("BERLIN");
-
         // then
         assertEquals(expected,result);
     }
@@ -30,19 +29,28 @@ class FlightFinderTestSuite {
         List<Flight> expected = Arrays.asList(new Flight("BERLIN", "WARSAW"));
         // when
         List<Flight> result = flightFinder.findFlightsFrom("ROME");
-
         // then
         assertEquals(expected,result);
     }
 
     @Test
-    public void testFindFlightsTo(){
-
-        List <Flight> result = Arrays.asList(new Flight("MADRID","WARSAW"));
+    public void testFindFlightsToWhenFlightExist(){
+        //given
+        List<Flight> expected = Arrays.asList(new Flight("STOKHOLM", "BERLIN"));
+        // when
+        List<Flight> result = flightFinder.findFlightsTo("BERLIN");
         // then
-        List <Flight> expectedList = new ArrayList<>();
-        expectedList.add(new Flight("MADRID", "WARSAW"));
-        assertEquals(expectedList, result);
+        assertEquals(expected,result);
+    }
+
+    @Test
+    public void testFindFlightsToWhenFlightDoesNotExist(){
+        //given
+        List<Flight> expected = Arrays.asList(new Flight("BERLIN", "WARSAW"));
+        // when
+        List<Flight> result = flightFinder.findFlightsTo("MONACO");
+        // then
+        assertEquals(expected,result);
     }
 
 }
