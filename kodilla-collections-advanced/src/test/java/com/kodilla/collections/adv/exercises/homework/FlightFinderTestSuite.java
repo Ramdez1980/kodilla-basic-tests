@@ -26,7 +26,7 @@ class FlightFinderTestSuite {
     @Test
     public void testFindFlightsFromWhenFlightDoesNotExist(){
         //given
-        List<Flight> expected = Arrays.asList(new Flight("BERLIN", "WARSAW"));
+        List<Flight> expected = Arrays.asList();
         // when
         List<Flight> result = flightFinder.findFlightsFrom("ROME");
         // then
