@@ -1,5 +1,7 @@
 package com.kodilla.exception.homework;
 
+import java.util.Objects;
+
 public class Order {
     String number;
 
@@ -11,4 +13,10 @@ public class Order {
         return number;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "number='" + number + '\'' +
+                '}';
+    }
 }

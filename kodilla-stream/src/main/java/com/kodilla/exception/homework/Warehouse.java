@@ -18,10 +18,4 @@ public class Warehouse {
     public static Order getOrder(String number) {
         return getOrder("6/2021");
     }
-
-
-
-
-
-
 }
