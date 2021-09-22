@@ -6,15 +6,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Warehouse {
+    private List<Order> orders = new ArrayList<>();
 
-    public List<Order> getOrders (String number) {
-        return new ArrayList<>();
+    public Order getOrder(String number){
+        return ;
     }
-
-
-
-    public List<Order> addOrder(Order order) {
-        return addOrder(new Order(""));
+    public void addOrder(Order order) {
+        orders.add(order);
     }
 
 
