@@ -1,5 +1,9 @@
 package com.kodilla.rest.domain;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+
 public class BookDto {
     private String title;
     private String author;
@@ -12,4 +16,21 @@ public class BookDto {
     public String getTitle() { return title; }
 
     public String getAuthor() { return author; }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BookDto)) return false;
+        BookDto bookDto = (BookDto) o;
+        return getTitle().equals(bookDto.getTitle()) && getAuthor().equals(bookDto.getAuthor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTitle(), getAuthor());
+    }
+
+
 }
