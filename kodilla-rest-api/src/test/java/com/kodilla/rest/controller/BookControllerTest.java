@@ -38,9 +38,9 @@ class BookControllerTest {
         Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
 
         //when
-        bookController.addBook(booksList.set(3, new BookDto("Title 3", "Author 3")));
+        bookController.addBook(new BookDto("",""));
 
         //then
-        assertThat().booksize(3);
+        assertThat(bookController.getBooks()).hasSize(3);
     }
 }
