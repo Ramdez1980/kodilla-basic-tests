@@ -28,6 +28,5 @@ import java.util.List;
     }
 
     @PostMapping
-    public void removeBook(@RequestBody BookDto bookDto) { bookService.removeBook(bookDto);
-    }
+    public void removeBook(@RequestBody BookDto bookDto) { bookService.removeBook(bookDto);}
 }
