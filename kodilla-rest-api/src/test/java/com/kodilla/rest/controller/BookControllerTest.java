@@ -17,7 +17,6 @@ class BookControllerTest {
     public void shouldFetchBooks() {
         //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
-        ;
         BookController bookController = new BookController(bookServiceMock);
         List<BookDto> booksList = new ArrayList<>();
         booksList.add(new BookDto("Title 1", "Author 1"));
@@ -33,15 +32,13 @@ class BookControllerTest {
     public void shouldAddBooks() {
         //given
         BookService bookServiceMock = Mockito.mock(BookService.class);
-        BookController bookController = new BookController(bookServiceMock);
         List<BookDto> booksList = new ArrayList<>();
-        booksList.add(new BookDto("Title 3", "Author 3"));
-        Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
-
         //when
+        BookController bookController = new BookController(bookServiceMock);
         bookController.addBook(new BookDto("Title 3", "Author 3"));
-
+        List<BookDto> result = bookController.getBooks();
+        Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
         //then
-        assertThat(bookController.getBooks()).hasSize(3);
+        assertThat(result/*bookController.getBooks()*/).hasSize(3);
     }
 }
