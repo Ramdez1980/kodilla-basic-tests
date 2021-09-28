@@ -3,4 +3,5 @@ include 'kodilla-collections'
 include 'kodilla-collections-advanced'
 include 'kodilla-stream'
 include 'kodilla-rest-api'
+include 'kodilla-spring-basic'
 
