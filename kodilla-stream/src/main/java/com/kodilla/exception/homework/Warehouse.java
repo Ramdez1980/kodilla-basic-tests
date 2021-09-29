@@ -9,7 +9,7 @@ public class Warehouse {
     private List<Order> orders = new ArrayList<>();
 
     public Order getOrder(String number){
-        return ;
+        return getOrder("1/2021") ;
     }
     public void addOrder(Order order) {
         orders.add(order);

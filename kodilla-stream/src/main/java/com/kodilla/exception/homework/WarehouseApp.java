@@ -1,7 +1,6 @@
 package com.kodilla.exception.homework;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class WarehouseApp {
     public static void main(String[] args) {
@@ -14,9 +13,9 @@ public class WarehouseApp {
 
 
 
-        for (Order order :  ) {
+        for (Order order : orders ) {
             String number = order.getNumber();
-            orders.add(order);
+            /*orders.add(order);*/
         }
     }
 }
