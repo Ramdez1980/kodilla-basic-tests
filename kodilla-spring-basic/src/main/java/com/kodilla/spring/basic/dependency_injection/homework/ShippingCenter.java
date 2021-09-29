@@ -2,19 +2,19 @@ package com.kodilla.spring.basic.dependency_injection.homework;
 
 public class ShippingCenter {
 
-    private DhlDeliveryService dhlDeliveryService  ;
-    private DhlNotificationService dhlNotificationService;
+    private DeliveryService deliveryService;
+    private NotificationService notificationService;
 
-    public ShippingCenter(DhlDeliveryService dhlDeliveryService,DhlNotificationService dhlNotificationService) {
-        this.dhlDeliveryService = dhlDeliveryService;
-        this.dhlNotificationService = dhlNotificationService;
+    public ShippingCenter(DeliveryService deliveryService, NotificationService notificationService) {
+        this.deliveryService = deliveryService;
+        this.notificationService = notificationService;
     }
 
     public void sendPackage(String address, double weight) {
-        if (dhlDeliveryService.deliverPackage(address, weight)) {
-            dhlNotificationService.success(address);
+        if (deliveryService.deliverPackage(address, weight)) {
+            notificationService.success(address);
         } else {
-            dhlNotificationService.fail(address);
+            notificationService.fail(address);
         }
     }
 }
