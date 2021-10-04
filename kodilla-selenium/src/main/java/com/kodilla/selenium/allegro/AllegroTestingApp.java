@@ -1,6 +1,5 @@
 package com.kodilla.selenium.allegro;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,9 +11,7 @@ public class AllegroTestingApp {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.allegro.pl/");
         Thread.sleep(5000);
-        WebElement acceptCookies = driver.findElement(By.xpath("//html/body/div/div/header/div/div/div/form/div/select/optgroup/option[3]"));
-
-
-
+        WebElement findField = driver.findElement(By.xpath("//html/body/div/div/header/div/div/div/form/div/select/optgroup/[option value = \"/kategoria/elektronika\"]"));
+        findField.submit();
     }
 }
