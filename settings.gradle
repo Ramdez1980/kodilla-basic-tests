@@ -5,4 +5,5 @@ include 'kodilla-stream'
 include 'kodilla-rest-api'
 include 'kodilla-spring-basic'
 include 'kodilla-advanced-tests'
+include 'kodilla-module-second'
 
