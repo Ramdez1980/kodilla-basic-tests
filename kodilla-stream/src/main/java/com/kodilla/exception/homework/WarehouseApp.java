@@ -1,5 +1,7 @@
 package com.kodilla.exception.homework;
 
+import com.kodilla.exception.AirportNotFoundException;
+
 import java.util.ArrayList;
 
 public class WarehouseApp {
@@ -11,11 +13,9 @@ public class WarehouseApp {
             orders.add(new Order("4/2021"));
             orders.add(new Order("5/2021"));
 
-
-
         for (Order order : orders ) {
             String number = order.getNumber();
-            /*orders.add(order);*/
+            System.out.println(order.getNumber());
         }
     }
 }
