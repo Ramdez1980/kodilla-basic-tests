@@ -2,8 +2,6 @@ package com.kodilla.mockito.homework;
 
 
 import com.kodilla.notification.homework.Location;
-import com.kodilla.notification.homework.WeatherClient;
-import com.kodilla.notification.homework.WeatherNotification;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,15 +37,18 @@ public class WeatherService {
         }
 
         public void removeWeatherSubscriber(Subscriber subscriber, Location location) {
-            //...
+            Set<Subscriber> subscribers = locationSubscribers.get(location);
+            locationSubscribers.remove(location, subscribers);
         }
 
-        public void removeWeatherSubscriber(Subscriber subscriber) {
-            //...
+        public void removeAllSubscriber(Subscriber subscriber) {
+            Set<Subscriber> subscribers = locationSubscribers.get(subscriber);
+            locationSubscribers.remove(subscribers);
         }
 
         public void removeLocation(Location location) {
-            locationSubscribers.remove(location);
+            Set<Subscriber> locations = locationSubscribers.get(location);
+            locationSubscribers.remove(locations);
         }
 
 }

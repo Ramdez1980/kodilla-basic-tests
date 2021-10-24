@@ -1,7 +1,9 @@
 package com.kodilla.notification.homework;
 
+import com.kodilla.mockito.homework.WeatherNotification;
+
 public interface WeatherClient {
 
-    void receiveWeather(WeatherNotification weatherNotification);
+    void receiveWeather1(WeatherNotification weatherNotification);
 
 }
