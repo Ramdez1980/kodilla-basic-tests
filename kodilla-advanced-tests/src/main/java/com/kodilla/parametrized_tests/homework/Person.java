@@ -10,9 +10,7 @@ public class Person {
         this.weightInKilogram = weightInKilogram;
     }
 
-
-
-    public static String getBMI(double heightInMeters, double weightInKilogram) {
+    public String getBMI() {
         double bmi = weightInKilogram / (heightInMeters * heightInMeters);
         if (bmi < 15) {
             return "Very severely underweight";
