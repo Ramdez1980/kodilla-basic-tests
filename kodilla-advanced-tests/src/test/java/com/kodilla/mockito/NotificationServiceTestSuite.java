@@ -41,9 +41,12 @@ public class NotificationServiceTestSuite {
 
     @Test
     public void shouldSendOnlyOneNotificationToMultiTimeSubscriber() {
+        Client secondClient = Mockito.mock(Client.class);
+        Client thirdClient = Mockito.mock(Client.class);
+
         notificationService.addSubscriber(client);
-        notificationService.addSubscriber(client);
-        notificationService.addSubscriber(client);
+        notificationService.addSubscriber(secondClient);
+        notificationService.addSubscriber(thirdClient);
 
         notificationService.sendNotification(notification);
         Mockito.verify(client, Mockito.times(1)).receive(notification);

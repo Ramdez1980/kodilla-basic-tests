@@ -1,12 +1,7 @@
 package com.kodilla.mockito.homework;
 
-
 import com.kodilla.notification.homework.Location;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class WeatherService {
@@ -22,6 +17,16 @@ public class WeatherService {
             locationSubscribers.put(location, subscribers);
         }
 
+        public void removeWeatherSubscriber(Subscriber subscriber, Location location) {
+            Set<Subscriber> subscribers = locationSubscribers.get(location);
+            subscribers.remove(subscriber);
+        }
+
+        public void removeAllLocations(Subscriber subscriber) {
+            //locationSubscribers.keySet().forEach(location -> removeWeatherSubscriber(subscriber, location));   -- inna mozliwosc
+            locationSubscribers.forEach((location, subscribers) -> subscribers.remove(subscriber));
+        }
+
         public void sendWeatherNotification(WeatherNotification weatherNotification, Location location) {
             Set<Subscriber> subscribersToNotify = locationSubscribers.get(location);
             if (subscribersToNotify != null) {
@@ -31,24 +36,17 @@ public class WeatherService {
 
         public void sendToAll(WeatherNotification weatherNotification) {
             Set<Subscriber> allSubscribers = locationSubscribers.values().stream()
-                    .flatMap(x -> x.stream())
+                    .flatMap(Collection::stream)
                     .collect(Collectors.toSet());
             allSubscribers.forEach(subscriber -> subscriber.send(weatherNotification));
         }
 
-        public void removeWeatherSubscriber(Subscriber subscriber, Location location) {
-            Set<Subscriber> subscribers = locationSubscribers.get(location);
-            locationSubscribers.remove(location, subscribers);
-        }
-
-        public void removeAllSubscriber(Subscriber subscriber) {
-            Set<Subscriber> subscribers = locationSubscribers.get(subscriber);
-            locationSubscribers.remove(subscribers);
-        }
-
         public void removeLocation(Location location) {
-            Set<Subscriber> locations = locationSubscribers.get(location);
-            locationSubscribers.remove(locations);
+            locationSubscribers.remove(location);
+        }
+
+        public Map<Location, Set<Subscriber>> getLocationSubscribers() {
+            return locationSubscribers;
         }
 
 }
