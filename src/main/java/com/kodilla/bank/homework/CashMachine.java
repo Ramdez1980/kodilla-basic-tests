@@ -1,55 +1,87 @@
 package com.kodilla.bank.homework;
 
 
-public class CashMachine {
 
+
+public class CashMachine {
     private int[] transactions;
-    private int balance;
     private int size;
-    private int depositSize;
-    private int withdrawalSize;
-    private String name;
 
     public CashMachine() {
         this.transactions = new int[0];
-        this.balance = balance;
         this.size = 0;
-        this.depositSize = depositSize;
-        this.withdrawalSize = withdrawalSize;
-        this.name = name;
     }
 
-    public void add(int value) {
-        this.size++;
-        int[] newTransactions = new int[this.size];
-        System.arraycopy(transactions, 0, newTransactions, 0, transactions.length);
-        newTransactions[this.size - 1] = value;
-        this.transactions = newTransactions;
+    public void addTransaction(int amount){
+        if (amount < 0){
+            System.out.println("Amount of money is less than 0");
+        }
 
+        if ((getBalance() + amount) >= 0) {
+            this.size++;
+            int[] tempTab = new int[size];
+            System.arraycopy(transactions, 0, tempTab, 0, transactions.length);
+            tempTab[size -1] = amount;
+            this.transactions = tempTab;
+        }
+    }
+
+    public int getBalance() {
+        int sum = 0;
+        for (int i = 0; i < transactions.length; i++){
+            sum = sum + transactions[i];
+        }
+        return sum;
     }
 
     public int[] getTransactions() {
         return transactions;
     }
 
-    public double getAverage() {
-        if (this.transactions.length == 0) {
-            return 0;
+    public int getNumberOfDeposits() {
+        int count = 0;
+        for (int i=0; i<transactions.length; i++) {
+            if (transactions[i]>0){
+                count ++;
+            }
         }
-        double sum = 0;
-        for (int i = 0; i < this.transactions.length; i++) {
-            sum += this.transactions[i];
-        }
-        return sum / this.transactions.length;
+        return count;
     }
 
-    public int sumOfTransactions() {
-        int counter = 0;
-        for (int i = 0; i < this.transactions.length; i++) {
-            counter += this.transactions[i];
-
+    public int getNumberOfWithdrawals() {
+        int count = 0;
+        for (int i=0; i<transactions.length; i++) {
+            if (transactions[i]<0){
+                count ++;
+            }
         }
-        return counter;
+        return count;
+    }
 
+    public double getAvgDeposit() {
+        if(this.transactions.length == 0 || getNumberOfDeposits() == 0) {
+            return 0.0;
+        }
+
+        double sum = 0;
+        for(int i = 0; i< transactions.length; i++){
+            if(transactions[i] > 0){
+                sum =  sum + transactions[i];
+            }
+        }
+        return sum/getNumberOfDeposits();
+    }
+
+    public double getAvgWithdrawals() {
+        if(this.transactions.length == 0 || getNumberOfWithdrawals() == 0) {
+            return 0.0;
+        }
+        double sum = 0;
+        for(int i = 0; i< transactions.length; i++){
+            if(transactions[i] < 0){
+                sum =  sum + transactions[i];
+            }
+        }
+        return sum/getNumberOfWithdrawals();
     }
 }

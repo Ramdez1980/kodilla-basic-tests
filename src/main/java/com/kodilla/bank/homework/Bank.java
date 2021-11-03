@@ -5,46 +5,78 @@ package com.kodilla.bank.homework;
 
 public class Bank {
 
-    private String name;
-    private CashMachine cashMachine;
-    private CashMachine firstCashMachine;
-    private CashMachine secondCashMachine;
-    private CashMachine thirdCashMachine;
-    private int size;
+    private CashMachine[] cashMachines;
+    private int numberOfDevices;
 
+    public Bank(int numberOfDevices){
+        this.numberOfDevices = numberOfDevices;
+        this.cashMachines = new CashMachine[numberOfDevices];
 
-    public Bank() {
-        this.firstCashMachine = new CashMachine();
-        this.secondCashMachine = new CashMachine();
-        this.thirdCashMachine = new CashMachine();
+        for(int i=0; i<cashMachines.length; i++){
+            cashMachines[i] = new CashMachine();
+        }
     }
 
-    public int addFirstCashMachineTransactions (int transaction){
-         this.firstCashMachine.add(transaction);
-
-        return transaction;
+    public int getNumberOfDevices(){
+        return numberOfDevices;
     }
 
-    public double addSecondCashMachineTransactions (){
-         return this.secondCashMachine.sumOfTransactions()/*add(transaction)*/;
+    public void addTransaction(int deviceNumber, int amount){
+        if(deviceNumber < cashMachines.length) {
+            cashMachines[deviceNumber].addTransaction(amount);
+        }
+    }
+
+    public int getTotalBalance() {
+        int sum = 0;
+        for(int i = 0; i<cashMachines.length; i++){
+            sum = sum + cashMachines[i].getBalance();
+        }
+        return sum;
+    }
+
+    public int getTotalNumberOfDeposits() {
+        int sum = 0;
+        for(int i = 0; i<cashMachines.length; i++){
+            sum = sum + cashMachines[i].getNumberOfDeposits();
+        }
+        return sum;
+    }
+
+    public int getTotalNumberOfWithdrawals() {
+        int sum = 0;
+        for(int i = 0; i<cashMachines.length; i++){
+            sum = sum + cashMachines[i].getNumberOfWithdrawals();
+        }
+
+        return sum;
 
     }
 
-    public void addThirdCashMachineTransactions (int transaction){
-            this.thirdCashMachine.add(transaction);
+    public double getTotalAvgDeposits() {
+        if(this.cashMachines.length==0) {
+            return 0;
+        }
+
+        double sum = 0;
+        for(int i = 0; i<cashMachines.length; i++){
+            sum = sum + cashMachines[i].getAvgDeposit();
+        }
+
+        return sum/cashMachines.length;
     }
 
-    public double getFirstCashMachineTransactions() {
-        return this.firstCashMachine.getAverage();
+    public double getTotalAvgWithdrawals() {
+        if(this.cashMachines.length==0) {
+            return 0;
+        }
 
-    }
+        double sum = 0;
+        for(int i = 0; i<cashMachines.length; i++){
+            sum = sum + cashMachines[i].getAvgWithdrawals();
+        }
 
-    public double getSecondCashMachineTransactions() {
-        return this.secondCashMachine.getAverage();
-    }
-
-    public double getThirdCashMachineTransactions() {
-        return this.thirdCashMachine.getAverage();
+        return (sum/cashMachines.length) * -1;
     }
 
 
