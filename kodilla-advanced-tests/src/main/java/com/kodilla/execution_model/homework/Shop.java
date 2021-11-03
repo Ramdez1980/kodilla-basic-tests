@@ -1,59 +1,40 @@
 package com.kodilla.execution_model.homework;
 
-
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class Shop {
 
-    LocalDate current = LocalDate.now();
-    LocalDate oneYear = current.minusYears(1);
-    int max = 0;
-    int min = 500;
+    private Set<Order> orders = new HashSet<>();
 
-    private List<Order> orders = new ArrayList<>();
-
-   public void addOrder(Order order) {
-        this.orders.add(order);
+    public void add(Order order) {
+        orders.add(order);
     }
 
-
-   public Order orderDate(LocalDate current, LocalDate oneYear) {
-        if (current.isAfter(oneYear)) {
-        }
-        return null;
+    public List<Order> get(LocalDate startDate, LocalDate endDate) {
+        return orders.stream()
+                .filter(order -> order.getDate().isAfter(startDate) && order.getDate().isBefore(endDate))
+                .collect(Collectors.toList());
     }
 
-    public double getMaxValue() {
-        int a = 0;
-        if (a < min) {
-            min = a;
-        }
-        return min;
+    public List<Order> get(double minValue, double maxValue) {
+        return orders.stream()
+                .filter(order -> order.getOrderValue() > minValue && order.getOrderValue() < maxValue)
+                .collect(Collectors.toList());
     }
 
-    public void getMinValue() {
-        int a = 0;
-        if (a > max) {
-            max = a;
-        }
-        return;
-
-    }
-
-    public int getSize() {
-        return this.orders.size();
+    public int count() {
+        return orders.size();
     }
 
     public double sum() {
-        int sum = 0;
-        for (int i = 0; i < orders.size(); i++) {
-            sum += orders.get(i).getOrderValue();
-        }
-        return sum;
+        return orders.stream()
+                .mapToDouble(order -> order.getOrderValue())
+                .sum();
     }
-
 
 }
