@@ -15,5 +15,13 @@ public class Warehouse {
         orders.add(order);
     }
 
+    public String doesOrderExist (String number) throws OrderDoesntExistException {
+        if (orders.contains(number)) {
+            return String.valueOf(getOrder("number"));
+        }
+        throw new OrderDoesntExistException();
+
+    }
+
 
 }
