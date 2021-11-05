@@ -1,9 +1,5 @@
 package com.kodilla.exception.homework;
 
-import com.kodilla.exception.AirportNotFoundException;
-
-import java.util.ArrayList;
-
 public class WarehouseApp {
 
     public static void main(String[] args) {
