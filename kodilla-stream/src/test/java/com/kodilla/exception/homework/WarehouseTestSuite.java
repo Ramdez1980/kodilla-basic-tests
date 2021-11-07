@@ -4,20 +4,22 @@ import org.junit.jupiter.api.Test;
 
 import java.util.function.BooleanSupplier;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WarehouseTestSuite {
-
+    String number;
     @Test
-    public void testDoesOrderExist() {
+    public void testDoesOrderExist() throws OrderDoesntExistException {
         // given
-        Order order = new Order("18/2021");
+        Warehouse warehouse = new Warehouse();
         // when
-        String doesOrderExist = order.getNumber();
+        Order doesOrderExist = warehouse.getOrder("5/2021");
 
         // then
-        assertFalse(Boolean.parseBoolean(doesOrderExist));
+        assertTrue((BooleanSupplier) doesOrderExist);
 
     }
 
