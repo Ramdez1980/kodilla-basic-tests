@@ -27,6 +27,6 @@ import java.util.List;
         bookService.addBook(bookDto);
     }
 
-    @PostMapping
+    @DeleteMapping
     public void removeBook(@RequestBody BookDto bookDto) { bookService.removeBook(bookDto);}
 }
