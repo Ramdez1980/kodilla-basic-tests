@@ -6,10 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,54 +36,30 @@ public class ShopTestSuite {
         assertEquals(3, result.size());
     }
 
-//
-//    @Test
-//    public void shouldGetMaxValue() {
-//
-//        //When
-//        Order getMaxValue = orders
-//                .stream()
-//                .max(Comparator.comparing(Order::getOrderValue))
-//                .orElseThrow(NoSuchElementException::new);
-//
-//
-//        assertEquals(254.0, getMaxValue);
-//    }
-//
-//    @Test
-//    public void shouldGetMinValue() {
-//
-//        //When
-//        Order getMinValue = orders
-//                .stream()
-//                .min(Comparator.comparing(Order::getOrderValue))
-//                .orElseThrow(NoSuchElementException::new);
-//
-//        assertEquals(100, getMinValue);
-//    }
-//
-//    @Test
-//    public void shouldGetSize() {
-//
-//        //When
-//        shop.getSize();
-//
-//        //then
-//        assertEquals(3, shop.getSize());
-//        System.out.println("The number of all orders is " + shop.getSize());
-//    }
-//
-//    @Test
-//    public void shouldGetTotalValue() {
-//
-//        //When
-//        shop.sum();
-//
-//        //Then
-//        assertEquals(497.00, shop.sum());
-//        System.out.println("Total value of all orders is " + shop.sum());
-//
-//    }
+
+   @Test
+  public void shouldGetOrdersFromValueInterval() {
+
+       //When
+       List<Order> result = shop.get(15.0, 120.5);
+
+       assertEquals(3, result.size());
+    }
+
+   @Test
+   public void shouldCount() {
+        // When & Then
+        assertEquals(5, shop.count());
+        System.out.println("The number of all orders is " + shop.count());
+    }
+
+    @Test
+    public void shouldSum() {
+        //When & Then
+        assertEquals(374.1, shop.sum());
+        System.out.println("Total value of all orders is " + shop.sum());
+
+    }
 
     @BeforeEach
     public void initializeShop() {
