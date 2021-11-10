@@ -34,11 +34,11 @@ public class BookControllerTest {
         List<BookDto> booksList = new ArrayList<>();
         BookController bookController = new BookController(bookServiceMock);
         Mockito.when(bookServiceMock.getBooks()).thenReturn(booksList);
+        booksList.add(new BookDto("Title 3", "Author 3"));
         //when
         bookController.addBook(new BookDto("Title 3", "Author 3"));
-        List<BookDto> result = bookController.getBooks();
 
         //then
-        assertThat(result).hasSize(3);
+        assertThat(bookController.getBooks()).hasSize(1);
     }
 }
