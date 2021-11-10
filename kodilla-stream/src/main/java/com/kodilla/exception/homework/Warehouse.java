@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
+
     private List<Order> orders = new ArrayList<>();
 
     public Order getOrder(String number) throws OrderDoesntExistException {
