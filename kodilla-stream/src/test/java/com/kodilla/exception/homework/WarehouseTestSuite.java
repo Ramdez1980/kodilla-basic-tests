@@ -2,24 +2,20 @@ package com.kodilla.exception.homework;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.function.BooleanSupplier;
-
-
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class WarehouseTestSuite {
-    String number;
+
     @Test
     public void testDoesOrderExist() throws OrderDoesntExistException {
         // given
         Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(new Order("5/2021"));
         // when
-        Order doesOrderExist = warehouse.getOrder("5/2021");
+        Order order = warehouse.getOrder("5/2021");
 
         // then
-        assertTrue((BooleanSupplier) doesOrderExist);
+        assertEquals("5/2021", order.getNumber());
 
     }
 
@@ -27,6 +23,7 @@ public class WarehouseTestSuite {
     public void testDoesOrderExist_withException() {
         // given
         Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(new Order("24/2021"));
         // when
         // then
         assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("25/2021"));
